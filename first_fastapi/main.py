@@ -26,7 +26,8 @@ def list_items(limit: int = 10):
 
 @app.get("/items/{item_id}", response_model=Item)
 def get_item(item_id: int) -> Item:
-    if item_id < len(items):
-        return items[item_id]
-    else:
+    if item_id > len(items) or item_id < 0:
         raise HTTPException(status_code=404, detail=f"Item {item_id} not found")
+    else:
+        return items[item_id]
+
