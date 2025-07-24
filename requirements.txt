@@ -3,4 +3,5 @@ uvicorn
 pydantic
 sqlalchemy
 psycopg2-binary
-passlib[bcrypt] python-jwt
+passlib[bcrypt]
+python-jwt
