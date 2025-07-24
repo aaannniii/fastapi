@@ -51,3 +51,4 @@ def protected_route(credentials: HTTPAuthorizationCredentials = Depends(security
     if not payload:
         raise HTTPException(status_code=status.HTTP_403_FORBIDDEN, detail="Invalid or expired token")
     return {"message": "Protected route accessed", "user": payload["sub"]}
+    print("Access granted to protected route")
